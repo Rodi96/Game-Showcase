@@ -13,26 +13,6 @@ export const AboutUs = () => {
         Our mission is to deliver exceptional user experiences through innovative and intuitive design.
       </Typography>
       <Typography variant="h4" component="h2" gutterBottom sx={{ fontFamily: 'Roboto', color: 'white' }}>
-        Our Team
-      </Typography>
-      <List>
-        <ListItem>
-          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Rodriges Dema</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Lead Developer</span>} />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Rasim Domi</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Frontend Developer</span>} />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Fabio Pashollari</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Frontend Developer</span>} />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Sara Rusi</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Frontend Developer</span>} />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Euserio Nikolli</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Frontend Developer</span>} />
-        </ListItem>
-      </List>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ fontFamily: 'Roboto', color: 'white' }}>
         Our Vision
       </Typography>
       <Typography variant="body1" paragraph sx={{ fontFamily: 'Roboto', color: 'white' }}>
@@ -72,6 +52,14 @@ export const AboutUs = () => {
       <Typography variant="body1" sx={{ fontFamily: 'Roboto', color: 'white' }}>
         Thank you for visiting our page. We look forward to collaborating with you!
       </Typography>
+      <Typography variant="h6" component="h3" sx={{ fontFamily: 'Roboto', color: 'white' , marginTop: '20px'}}>
+        Worked by:
+      </Typography>
+      <List>
+        <ListItem>
+          <ListItemText primary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Rodriges Dema</span>} secondary={<span style={{ color: 'gold', fontWeight: 'bold' }}>Frontend Developer</span>} />
+        </ListItem>
+      </List>
     </Container>
   );
 };
