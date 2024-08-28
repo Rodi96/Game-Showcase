@@ -136,36 +136,15 @@ export const getLatestGames = async (dispatch, page = 1) => {
   }
 };
 
-
-// export const getPlatforms = async (dispatch) => {
-//   setLoading(dispatch, true);
-
-//   try {
-//     const url = `https://api.rawg.io/api/platforms`;
-//     const response = await createApiInstance(url);
-//     const result = response.data.results;
-
-//     dispatch({
-//       type: "SET_PLATFORMS",
-//       payload: result,
-//     });
-//   } catch (error) {
-//     setError(dispatch, { status: true, message: error.message });
-//   } finally {
-//     setLoading(dispatch, false);
-//   }
-// };
-
-
 export const getPlatforms = async (dispatch) => {
   setLoading(dispatch, true);
 
   try {
-    const url = `https://api.rawg.io/api/platforms?key=YOUR_API_KEY`; // Replace YOUR_API_KEY with your actual API key
+    const url = `https://api.rawg.io/api/platforms?key=YOUR_API_KEY`; 
     const response = await createApiInstance(url);
     const result = response.data.results.map(platform => ({
       ...platform,
-      games_count: platform.games_count, // Assuming the API provides this data
+      games_count: platform.games_count, 
     }));
 
     dispatch({
@@ -173,7 +152,7 @@ export const getPlatforms = async (dispatch) => {
       payload: result,
     });
   } catch (error) {
-    console.error('API Error:', error); // Log the error for debugging
+    console.error('API Error:', error); 
     setError(dispatch, { status: true, message: error.message });
   } finally {
     setLoading(dispatch, false);
@@ -185,7 +164,7 @@ export const getGamesForPlatform = async (dispatch, platformId) => {
   setLoading(dispatch, true);
 
   try {
-    const url = `https://api.rawg.io/api/games?platforms=${platformId}&key=YOUR_API_KEY`; // Replace YOUR_API_KEY with your actual API key
+    const url = `https://api.rawg.io/api/games?platforms=${platformId}&key=YOUR_API_KEY`; 
     const response = await createApiInstance(url);
     const result = response.data.results;
 
@@ -194,7 +173,7 @@ export const getGamesForPlatform = async (dispatch, platformId) => {
       payload: result,
     });
   } catch (error) {
-    console.error('API Error:', error); // Log the error for debugging
+    console.error('API Error:', error); 
     setError(dispatch, { status: true, message: error.message });
   } finally {
     setLoading(dispatch, false);

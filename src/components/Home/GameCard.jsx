@@ -7,7 +7,7 @@ import { useGames } from '../../context/Games/useGames';
 import { useCallback, useState } from 'react';
 import { removeFromPlayedGames } from '../../context/Games/GameAction';
 
-const GameCard = ({ game, isInLibrary = false, showDetails }) => { // Receive showDetails as a prop
+const GameCard = ({ game, isInLibrary = false, showDetails }) => { 
   const [gamesState, gamesDispatch] = useGames();
   const { playedGames } = gamesState;
 
@@ -101,7 +101,7 @@ const GameCard = ({ game, isInLibrary = false, showDetails }) => { // Receive sh
 GameCard.propTypes = {
   game: PropTypes.object.isRequired,
   isInLibrary: PropTypes.bool,
-  showDetails: PropTypes.bool.isRequired, // Declare showDetails as a required prop
+  showDetails: PropTypes.bool.isRequired, 
 };
 
 export default GameCard;

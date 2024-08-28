@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export const Platforms = () => {
   const [{ platforms, loading }, dispatch] = useGames();
   const [visiblePlatforms, setVisiblePlatforms] = useState(8);
-  const [sortByGames, setSortByGames] = useState('asc'); // Default sort by ascending order
+  const [sortByGames, setSortByGames] = useState('asc'); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,10 +33,10 @@ export const Platforms = () => {
 
   return (
     <Box sx={{ padding: '230px 0 30px' }}>
-      <Typography variant="h4" gutterBottom align="center" sx={{ color: 'white' }}> {/* Centering Typography */}
+      <Typography variant="h4" gutterBottom align="center" sx={{ color: 'white' }}> 
         Platforms
       </Typography>
-      <Box sx={{ marginBottom: '20px', textAlign: 'center' }}> {/* Centering Button */}
+      <Box sx={{ marginBottom: '20px', textAlign: 'center' }}> 
         <Button 
           variant="outlined" 
           onClick={handleSortByGames} 

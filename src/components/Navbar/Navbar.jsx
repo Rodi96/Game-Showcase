@@ -5,9 +5,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Navbar = ({ setSearchTerm }) => {
+const Navbar = ({ searchTerm, setSearchTerm }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [searchTermLocal, setSearchTermLocal] = useState('');
+  const [searchTermLocal, setSearchTermLocal] = useState(searchTerm);
   const navigate = useNavigate();
 
   const handleMenu = (event) => {
@@ -20,8 +20,8 @@ const Navbar = ({ setSearchTerm }) => {
 
   const handleSearchChange = useCallback((event) => {
     const newValue = event.target.value;
-    setSearchTerm(newValue); 
-    setSearchTermLocal(newValue); 
+    setSearchTerm(newValue);
+    setSearchTermLocal(newValue);
   }, [setSearchTerm]);
 
   const handleHomeClick = () => {
@@ -38,7 +38,7 @@ const Navbar = ({ setSearchTerm }) => {
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
         height: '60px',
         zIndex: 900,
-        top: '150px', // Ensure Navbar starts below the Header
+        top: '150px',
         width: '100%',
       }}
     >
@@ -92,7 +92,7 @@ const Navbar = ({ setSearchTerm }) => {
                 width: '100%',
               }}
               placeholder="Search Games"
-              value={searchTermLocal} 
+              value={searchTermLocal}
               onChange={handleSearchChange}
             />
             <Box
@@ -118,7 +118,8 @@ const Navbar = ({ setSearchTerm }) => {
 };
 
 Navbar.propTypes = {
-  setSearchTerm: PropTypes.func.isRequired, // Ensure this prop is passed correctly
+  searchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.func.isRequired,
 };
 
 export default Navbar;

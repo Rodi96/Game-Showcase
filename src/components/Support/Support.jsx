@@ -26,7 +26,7 @@ export const Support = () => {
           boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.5)',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center', // Center items horizontally
+          alignItems: 'center', 
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom sx={{ fontFamily: 'Roboto', color: 'white' }}>
@@ -47,10 +47,10 @@ export const Support = () => {
                 onChange={(e) => setName(e.target.value)}
                 required
                 InputProps={{
-                  style: { color: 'white' }, // Change text color to white
-                  inputProps: { style: { color: 'white' } }, // Change input text color to white
+                  style: { color: 'white' }, 
+                  inputProps: { style: { color: 'white' } }, 
                 }}
-                InputLabelProps={{ style: { color: 'black' } }} // Change label color to white
+                InputLabelProps={{ style: { color: 'black' } }} 
                 sx={{ backgroundColor: 'white' }}
               />
             </Box>
@@ -63,8 +63,8 @@ export const Support = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                InputProps={{ style: { color: 'white' } }} // Change text color to white
-                InputLabelProps={{ style: { color: 'black' } }} // Change label color to white
+                InputProps={{ style: { color: 'white' } }} 
+                InputLabelProps={{ style: { color: 'black' } }} 
                 sx={{ backgroundColor: 'white' }}
               />
             </Box>
@@ -78,7 +78,7 @@ export const Support = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                InputProps={{ style: { color: 'white' } }} 
+                InputProps={{ style: { color: 'black' } }} 
                 InputLabelProps={{ style: { color: 'black' } }} 
                 sx={{ backgroundColor: 'white' }}
               />

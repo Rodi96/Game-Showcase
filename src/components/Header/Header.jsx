@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 
-import image1 from '../Header/HeaderAssets/imagess.jpg';
-import image2 from '../Header/HeaderAssets/image2.jpg';
-import image3 from '../Header/HeaderAssets/image3.jpg';
-import image4 from '../Header/HeaderAssets/image124.jpg';
-import image5 from '../Header/HeaderAssets/gamers.jpg';
+import image1 from '../Header/HeaderAssets/image672.jpg';
+import image2 from '../Header/HeaderAssets/image668.jpg';
+import image3 from '../Header/HeaderAssets/image705.jpg';
 
-const images = [image1, image2, image3, image4, image5];
+
+const images = [image1, image2, image3 ];
 
 export const Header = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -98,7 +97,7 @@ export const Header = () => {
           right: '10px',
           color: 'white',
           fontStyle: 'italic',
-          paddingRight: '40px', // Padding on the right to create space for arrows
+          paddingRight: '40px', 
         }}
       >
         Games are the most relaxing of all endeavors.

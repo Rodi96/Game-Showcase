@@ -103,7 +103,7 @@ export const Login = () => {
             color="primary"
             sx={{
               margin: '24px 0 16px',
-              backgroundColor: 'darkgrey', // Change background color of button to dark grey
+              backgroundColor: 'darkgrey', 
             }}
           >
             Log In

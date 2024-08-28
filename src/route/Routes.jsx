@@ -8,7 +8,7 @@ import { Platforms } from '../components/Platforms/Platforms';
 import { AboutUs } from '../components/AboutUs/AboutUs';
 import { Support } from '../components/Support/Support';
 import { Login } from '../components/Login/Login';
-import { SignUp } from '../components/SignUp/SignUp'; 
+import { SignUp } from '../components/SignUp/SignUp';
 import { MyLibrary } from '../components/MyLibrary/MyLibrary';
 import GameDetail from '../components/Home/GameDetails';
 import PrivateRoute from './PrivateRoute';
@@ -16,26 +16,32 @@ import { AuthProvider } from '../components/Login/AuthContext';
 import { PlatformGames } from '../components/Platforms/PlatformGames';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { useState } from 'react';
 
 export const CustomRoutes = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <AuthProvider>
       <Router>
         <Header className="header" />
-        <Navbar className="navbar" />
+        <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Box className="main-content">
-          {/* Add the dusky background overlay here */}
           <div style={{
             position: 'fixed',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 1)', // Semi-transparent black color
-            zIndex: -1, // Behind other content
+            backgroundColor: 'rgba(0, 0, 0, 1)', 
+            zIndex: -1, 
           }}></div>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home searchTerm={searchTerm} onSearchChange={handleSearchChange} />} />
             <Route path="/new-releases" element={<NewReleases />} />
             <Route path="/top-games" element={<PrivateRoute element={TopGames} />} />
             <Route path="/platforms" element={<Platforms />} />
